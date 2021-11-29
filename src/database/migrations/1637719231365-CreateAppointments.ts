@@ -11,6 +11,7 @@ export default class CreateAppointments1637719231365 implements MigrationInterfa
             type: 'varchar',
             isPrimary: true,
             generationStrategy: 'uuid',
+            default: 'uuid_generate_v4()',
           },
           {
             name: 'provider',
@@ -31,3 +32,7 @@ export default class CreateAppointments1637719231365 implements MigrationInterfa
     await queryRunner.dropTable('appointments');
   }
 }
+
+// yarn typeorm migration:revert
+// yarn typeorm migration:run
+// yarn typeorm migration:show
