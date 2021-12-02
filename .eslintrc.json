@@ -16,6 +16,7 @@
   ],
   "rules": {
     "class-methods-use-this": "off",
+    "camelcase": "off",
     "import/extensions": [
       "error",
       "ignorePackages",

@@ -8,16 +8,13 @@ class User {
     id: string;
 
   @Column()
-    name: string;
+    nome: string;
 
   @Column()
     email: string;
 
   @Column()
     password: string;
-
-  @Column('timestamp with time zone')
-    date: Date;
 
   @CreateDateColumn()
     created_at: Date;
