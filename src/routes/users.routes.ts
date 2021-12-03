@@ -18,6 +18,8 @@ usersRouter.post('/', async (request, response) => {
     const user = await createUser.execute({
       nome: name, email, password,
     });
+    // @ts-expect-error
+    delete user.password;
 
     return response.json(user);
   } catch (err) {
