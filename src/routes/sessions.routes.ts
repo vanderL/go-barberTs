@@ -10,13 +10,13 @@ sessionsRouter.post('/', async (request, response) => {
 
     const authenticateUser = new AuthenticateUsersService();
 
-    const { user } = await authenticateUser.execute({
+    const { user, token } = await authenticateUser.execute({
       email, password,
     });
     // @ts-expect-error
     delete user.password;
 
-    return response.json({ user });
+    return response.json({ user, token });
   } catch (err) {
     let errorMessage = 'Failed to do something exceptional';
 
