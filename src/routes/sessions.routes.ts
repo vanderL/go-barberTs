@@ -1,6 +1,7 @@
 import { Router } from 'express';
 
 import AuthenticateUsersService from '../services/AuthenticateUserService';
+import AppError from '../errors/AppError';
 
 const sessionsRouter = Router();
 
@@ -19,12 +20,14 @@ sessionsRouter.post('/', async (request, response) => {
     return response.json({ user, token });
   } catch (err) {
     let errorMessage = 'Failed to do something exceptional';
+    let statusCode = 400;
 
-    if (err instanceof Error) {
+    if (err instanceof AppError) {
       errorMessage = err.message;
+      statusCode = err.statusCode;
     }
 
-    return response.status(400).json({ error: errorMessage });
+    return response.status(statusCode).json({ error: errorMessage });
   }
 });
 
