@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 import {
   Entity, Column, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn,
 } from 'typeorm';
@@ -5,22 +6,25 @@ import {
 @Entity('users')
 class User {
   @PrimaryGeneratedColumn('uuid')
-    id: string;
+  id: string;
 
   @Column()
-    nome: string;
+  nome: string;
 
   @Column()
-    email: string;
+  email: string;
 
   @Column()
-    password: string;
+  password: string;
+
+  @Column()
+  avatar: string;
 
   @CreateDateColumn()
-    created_at: Date;
+  created_at: Date;
 
   @UpdateDateColumn()
-    updated_at: Date;
+  updated_at: Date;
 }
 
 export default User;
