@@ -17,6 +17,12 @@
   "rules": {
     "class-methods-use-this": "off",
     "camelcase": "off",
+    "no-unused-vars": [
+      "error",
+      {
+        "argsIgnorePattern": "_"
+      }
+    ],
     "import/extensions": [
       "error",
       "ignorePackages",
