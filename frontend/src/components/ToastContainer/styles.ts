@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 
 interface ToastProps {
-  type?: 'success' | 'error' | 'default';
+  type?: 'success' | 'error' | 'info';
   hasDescription: boolean;
 }
 
@@ -14,7 +14,7 @@ export const Container = styled.div`
 `;
 
 const toastTypeVariations = {
-  default: css`
+  info: css`
     background: #ebf8ff;
     color: #3172b7;
 `,
@@ -43,7 +43,7 @@ export const Toast = styled.div<ToastProps>`
     margin-top: 10px;
   }
 
-  ${props => toastTypeVariations[props.type || 'default']}
+  ${props => toastTypeVariations[props.type || 'info']}
 
   > svg {
     margin: 4px 12px 0 0;
