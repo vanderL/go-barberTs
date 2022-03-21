@@ -1,6 +1,6 @@
 import { Router } from 'express';
 
-import AuthenticateUsersService from '../services/AuthenticateUserService';
+import AuthenticateUsersService from '@modules/users/services/AuthenticateUserService';
 
 const sessionsRouter = Router();
 
@@ -12,7 +12,6 @@ sessionsRouter.post('/', async (request, response) => {
   const { user, token } = await authenticateUser.execute({
     email, password,
   });
-  // @ts-expect-error
   delete user.password;
 
   return response.json({ user, token });
