@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable no-empty-function */
 import { startOfHour } from 'date-fns';
 
@@ -12,7 +13,6 @@ interface IRequestDTO {
 }
 
 class CreateAppointmentService {
-  // eslint-disable-next-line no-unused-vars
   constructor(private appointmentsRepository: IAppointmentsRepository) { }
 
   public async execute({ date, provider_id }: IRequestDTO): Promise<Appointment> {
