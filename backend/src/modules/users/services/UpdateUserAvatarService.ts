@@ -1,10 +1,6 @@
 /* eslint-disable no-empty-function */
 /* eslint-disable no-unused-vars */
-import path from 'path';
-import fs from 'fs/promises';
 import { inject, injectable } from 'tsyringe';
-
-import uploadConfig from '@config/upload';
 
 import AppError from '@shared/errors/AppError';
 
