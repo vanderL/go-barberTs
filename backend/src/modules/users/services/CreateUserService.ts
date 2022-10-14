@@ -32,12 +32,12 @@ class CreateUserService {
     }
 
     const hashedPassword = await this.hashProvider.generateHash(password);
-
     const user = await this.usersRepository.create({
       name,
       email,
       password: hashedPassword,
     });
+    console.log('name aqui', name);
 
     return user;
   }

@@ -9,7 +9,7 @@ class User {
   id: string;
 
   @Column()
-  nome: string;
+  name: string;
 
   @Column()
   email: string;
