@@ -7,5 +7,5 @@ dist/
 temp/
 coverage/
 
-tmp/*
-!tmp/.gitkeep
+# tmp/*
+# !tmp/.gitkeep

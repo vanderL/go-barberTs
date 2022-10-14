@@ -37,7 +37,6 @@ class CreateUserService {
       email,
       password: hashedPassword,
     });
-    console.log('name aqui', name);
 
     return user;
   }
